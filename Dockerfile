@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 WORKDIR /src
 
@@ -13,7 +13,7 @@ WORKDIR "/src"
 RUN dotnet publish -c Release -o /app/publish
 
 
-FROM mcr.microsoft.com AS final
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS final
 
 WORKDIR /app
 
